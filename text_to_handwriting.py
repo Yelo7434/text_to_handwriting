@@ -23,4 +23,6 @@ def calculate_image_size(text, font, padding=40):
     height = text_height + padding
     return width, height
 
-# 
+# Creates a blank image with the specified dimensions.
+def create_blank_image(width, height, background_color="white"):
+    return Image.new("RGB", (width, height), color=background_color)
