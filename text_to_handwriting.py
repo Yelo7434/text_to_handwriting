@@ -37,3 +37,16 @@ def draw_text_on_image(image, text, font, text_color="black", padding=20):
 def save_image(image, filename="handwriting_output.png"):
     image.save(filename)
     print(f"Image saved as {filename}")
+
+# Main function to run the program.
+def main():
+    text = get_user_input()
+    font = load_cursive_font()
+    if font is None:
+        return
+    width, height = calculate_image_size(text, font)
+    image = create_blank_image(width, height)
+    image = draw_text_on_image(image, text, font)  
+    save_image(image)
+    if _name_ == "_main_":
+        main()
