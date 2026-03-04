@@ -32,3 +32,8 @@ def draw_text_on_image(image, text, font, text_color="black", padding=20):
     draw = ImageDraw.Draw(image)
     draw.text((padding, padding), text, font=font, fill=text_color)
     return image
+
+# Saves the image to a file.
+def save_image(image, filename="handwriting_output.png"):
+    image.save(filename)
+    print(f"Image saved as {filename}")
