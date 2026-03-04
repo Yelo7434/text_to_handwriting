@@ -14,4 +14,10 @@ def load_cursive_font(font_path="Bastigan One.ttf", font_size=60):
         print (f"Error: Font file '{font_path}' not found.")
         return None
     
-    
+#Calculates the size of the image based on the text and font.
+def calculate_image_size(text, font):
+    lines = text.split('\n')
+    max_line_width = max(font.getsize(line)[0] for line in lines)
+    total_height = sum(font.getsize(line)[1] for line in lines) + (len(lines) - 1) * 10
+    return (max_line_width + 20, total_height + 20)
+
