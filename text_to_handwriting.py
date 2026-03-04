@@ -6,7 +6,7 @@ def get_user_input():
     return input("Enter the text you want to convert to handwriting: ")
 
 # Loads the font from the path.
-def load_cursive_font(font_path="Bastigan One.ttf", font_size=60):
+def load_cursive_font(font_path="Bastliga One.ttf", font_size=60):
     try:
         font = ImageFont.truetype(font_path, font_size)
         return font
@@ -48,5 +48,6 @@ def main():
     image = create_blank_image(width, height)
     image = draw_text_on_image(image, text, font)  
     save_image(image)
-    if _name_ == "_main_":
-        main()
+
+if __name__ == "__main__":
+    main()
