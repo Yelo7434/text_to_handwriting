@@ -26,3 +26,9 @@ def calculate_image_size(text, font, padding=40):
 # Creates a blank image with the specified dimensions.
 def create_blank_image(width, height, background_color="white"):
     return Image.new("RGB", (width, height), color=background_color)
+
+# Draws text on the given image using the specified font.
+def draw_text_on_image(image, text, font, text_color="black", padding=20):
+    draw = ImageDraw.Draw(image)
+    draw.text((padding, padding), text, font=font, fill=text_color)
+    return image
